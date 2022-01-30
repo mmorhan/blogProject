@@ -19,6 +19,8 @@ namespace blogProject.Controllers
         public IActionResult BlogReadAll(int id)
         {
             var values=cm.GetByBlogId(id);
+            ViewBag.WriterId =cm.GetWriterId(id);
+            ViewBag.id = id;
             return View(values);
         }
     }

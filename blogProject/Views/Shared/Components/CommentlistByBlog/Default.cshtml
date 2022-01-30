@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+
+
+<div class="comment-top">
+    <h4>Comments</h4>
+    @if (Model.Count() > 0)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="media" style="margin:1em">
+                <img src="~/theme/images/t1.jpg" style="padding:1em" alt="" class="img-fluid" />
+                <div class="media-body">
+                    <h5 class="mt-0">@item.CommentUserName</h5>
+                    <p>
+                        @item.CommentContent
+                    </p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+       <p style="margin:2em">Opps There's no comment, Make the first Comment</p>
+    }
+</div>
+
