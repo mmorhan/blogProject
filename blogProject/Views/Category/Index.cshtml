@@ -1,0 +1,10 @@
+﻿@model List<EntityLayer.Concrete.Category>
+<h1>Category Page</h1>
+
+
+<ul>
+@foreach (var item in Model)
+{
+    <li>@item.CategoryId @item.CategoryName</li>
+}
+</ul>
