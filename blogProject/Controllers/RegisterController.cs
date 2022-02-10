@@ -29,7 +29,7 @@ namespace blogProject.Controllers
             if (validationResult.IsValid)
             {
                 cm.WriterAdd(writer);
-                return View(writer);
+                return RedirectToAction(nameof(Index));
             }
             else
             {
