@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace blogProject.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         BlogManager cm= new BlogManager(new EfBlogRepository()); 

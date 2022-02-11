@@ -30,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/theme/css/fontawesome-all.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
           rel="stylesheet">
+	<link href="~/theme/css/contact.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body>
@@ -39,47 +40,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="top-bar_sub_w3layouts container-fluid">
             <div class="row">
                 <div class="col-md-4 logo text-left">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="fab fa-linode"></i> Weblog
+                    <a class="navbar-brand" href="/Blog">
+                        <i class="fab fa-linode"></i>MINEBLOG 
                     </a>
                 </div>
-                @await Html.PartialAsync("HeaderPartial0") 
-                <div class="col-md-4 log-icons text-right">
+                @await Html.PartialAsync("HeaderPartial0")
+                @await Html.PartialAsync("HeaderPartialSocial")
 
-                    <ul class="social_list1 mt-3">
-
-                        <li>
-                            <a href="#" class="facebook1 mx-2">
-                                <i class="fab fa-facebook-f"></i>
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="twitter2">
-                                <i class="fab fa-twitter"></i>
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="dribble3 mx-2">
-                                <i class="fab fa-dribbble"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="pin">
-                                <i class="fab fa-pinterest-p"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
 
-       @await Html.PartialAsync("HeaderPartial")
+        @await Html.PartialAsync("HeaderPartial")
     </header>
     <!--//header-->
     <!--/main-->
-@RenderBody()
+    @RenderBody()
     <!--//main-->
     <!--footer-->
 
@@ -92,33 +67,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/theme/js/move-top.js"></script>
     <script src="~/theme/js/easing.js"></script>
     <script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 900);
-			});
-		});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
     </script>
     <!--// end-smoth-scrolling -->
 
     <script>
-		$(document).ready(function () {
-			/*
-									var defaults = {
-							  			containerID: 'toTop', // fading element id
-										containerHoverID: 'toTopHover', // fading element hover id
-										scrollSpeed: 1200,
-										easingType: 'linear'
-							 		};
-									*/
+        $(document).ready(function () {
+            /*
+                                    var defaults = {
+                                            containerID: 'toTop', // fading element id
+                                        containerHoverID: 'toTopHover', // fading element hover id
+                                        scrollSpeed: 1200,
+                                        easingType: 'linear'
+                                        };
+                                    */
 
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
 
-		});
+        });
     </script>
     <a href="#home" class="scroll" id="toTop" style="display: block;">
         <span id="toTopHover" style="opacity: 1;"> </span>
@@ -130,5 +105,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 </body>
-
 </html>

@@ -1,1 +1,12 @@
-﻿<h1>PartialView</h1>
+﻿<h4>Leave a Comment</h4>
+<div class="comment-bottom">
+    <form action="/Comment/PartialAddComment" method="post" >
+        <input class="form-control m-1" type="text" name="CommentUserName" placeholder="Name" required="">
+        <input class="form-control m-1" type="email" name="Email" placeholder="Email" required="">
+
+        <input class="form-control m-1" type="text" name="CommentTitle" placeholder="Subject" required="">
+
+        <textarea class="form-control m-1" name="CommentContent" placeholder="Message..." required=""></textarea>
+        <button type="submit" class="btn btn-primary submit">Submit</button>
+    </form>
+</div>

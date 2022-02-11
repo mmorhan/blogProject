@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog> 
+<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+    <div class="tech-btm">
+        <h3>Latest Posts</h3>
+        @foreach (var item in Model)
+        {
+            <div class="blog-grids row mb-3">
+                <div class="col-md-5 blog-grid-left">
+                    <a href="/blog/BlogReadAll/@item.BlogId">
+                        <img src="@item.BlogThumbnailImage" class="card-img-top img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-md-7 blog-grid-right">
+
+                    <div class="sub-meta">
+                        <span>
+                            <i class="">@item.BlogTitle
+                        </span>
+                    </div>
+                    <h5>
+                        <a href="/blog/BlogReadAll/@item.BlogId">
+                            @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 40).LastIndexOf(" "))
+
+                        </a>
+                    </h5>
+                    <div class="sub-meta">
+                        <span>
+                            <i class="far fa-clock">   @(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))</i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
