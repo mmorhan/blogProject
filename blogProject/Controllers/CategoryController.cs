@@ -14,7 +14,7 @@ namespace blogProject.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IActionResult Index()
         {
-            var values = cm.GetListAll();
+            var values = cm.GetList();
             return View(values);
         }
     }

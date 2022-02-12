@@ -24,14 +24,14 @@ namespace blogProject.Controllers
         [HttpPost]
         public PartialViewResult PartialAddComment(Comment p)
         {
-            cm.CommentAdd(p);
+            cm.TAdd(p);
             return PartialView();
         }
 
 
         public PartialViewResult CommentListByBlog(int id)
         {
-            var values = cm.GetListAll(id);
+            var values = cm.GetByCommentId(id);
             return PartialView(values);
         }
     }

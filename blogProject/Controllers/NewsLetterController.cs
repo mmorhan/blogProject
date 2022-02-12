@@ -25,7 +25,7 @@ namespace blogProject.Controllers
         public PartialViewResult SubscribeMail(NewsLetter p) 
         {
             p.status = true;
-            cm.NewsLetterAdd(p);
+            cm.TAdd(p);
             return PartialView();
         }
         

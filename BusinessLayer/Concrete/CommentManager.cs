@@ -19,30 +19,37 @@ namespace BusinessLayer.Concrete
         }
 
    
-        public void CommentAdd(Comment comment)
-        {
-            _commentDal.Insert(comment);
-        }
-
-        public void CommentDelete(Comment comment)
-        {
-            _commentDal.Delete(comment);
-        }
-
-        public void CommentUpdate(Comment comment)
-        {
-            _commentDal.Update(comment);
-        }
-
-        public List<Comment> GetListAll(int id)
-        {
-            return _commentDal.GetListAll(x=>x.BlogId==id);
-        }
 
         public List<Comment> GetByCommentId(int id)
         {
             return _commentDal.GetListAll(x=>x.CommentId==id);
         }
 
+        public void TAdd(Comment t)
+        {
+            _commentDal.Insert(t);
+
+        }
+
+        public void TDelete(Comment t)
+        {
+            _commentDal.Delete(t); 
+        }
+
+        public void TUpdate(Comment t)
+        {
+            _commentDal.Update(t);
+        }
+
+
+        public Comment GetById(int id)
+        {
+            return _commentDal.GetById(id);
+        }
+
+        public List<Comment> GetList()
+        {
+            return _commentDal.GetListAll();
+        }
     }
 }

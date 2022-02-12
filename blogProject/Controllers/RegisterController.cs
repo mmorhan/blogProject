@@ -28,7 +28,7 @@ namespace blogProject.Controllers
             ValidationResult validationResult = wv.Validate(writer);
             if (validationResult.IsValid)
             {
-                cm.WriterAdd(writer);
+                cm.TAdd(writer);
                 return RedirectToAction(nameof(Index));
             }
             else

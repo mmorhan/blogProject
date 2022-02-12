@@ -14,6 +14,13 @@ namespace DataAccessLayer.Concrete
         {
             optionsBuilder.UseNpgsql("User ID=orhan;Password=12345;Server=localhost;Port=5432;Database=blog;Integrated Security=true;Pooling=true;");
         }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Blog>()
+        //        .Property(b => b.BlogId)
+        //        .UseIdentityColumn();
+        //}
+
 
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories{ get; set; }

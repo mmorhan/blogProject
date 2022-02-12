@@ -13,7 +13,7 @@ namespace blogProject.Controllers
         AboutManager cm = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
-            var values=cm.GetListAll();
+            var values=cm.GetList();
             return View(values);
         }
         public PartialViewResult SocialMedia()

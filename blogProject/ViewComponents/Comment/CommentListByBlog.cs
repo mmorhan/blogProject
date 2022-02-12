@@ -13,7 +13,7 @@ namespace blogProject.ViewComponents.Comment
         CommentManager cm = new CommentManager(new EfCommentRepository());
         public IViewComponentResult Invoke(int id)
         {
-            var values = cm.GetListAll(id);
+            var values = cm.GetByCommentId(id);
             return View(values);
         }
     }

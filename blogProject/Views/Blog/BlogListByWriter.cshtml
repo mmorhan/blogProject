@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Blogs of Writer </h1>
+<table class="table table-bordered table-danger">
+
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Create Date</th>
+        <th>Category</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogId</td>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogCreateDate</td>
+            <td>@item.Category.CategoryName</td>
+            @if (item.BlogStatus.Equals("true"))
+            {
+                <td>Active</td>
+            }
+            else
+            {
+
+                <td>Passive</td>
+            }
+            <td><a class="form-control btn btn-danger" asp-action="deleteblog" asp-controller="blog" asp-route-id="@item.BlogId">Delete</a></td>
+            <td><a class="form-control btn btn-warning" asp-action="deleteblog" asp-controller="blog" asp-route-id="@item.BlogId">Update</a></td>
+        </tr>
+    }
+
+
+
+</table>
+
+

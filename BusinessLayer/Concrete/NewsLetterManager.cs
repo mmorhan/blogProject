@@ -16,9 +16,30 @@ namespace BusinessLayer.Concrete
         {
             _newsLetter = newsLetter;
         }
-        public void NewsLetterAdd(NewsLetter newsLetter)
+
+        public NewsLetter GetById(int id)
         {
-            _newsLetter.Insert(newsLetter);
+            throw new NotImplementedException();
+        }
+
+        public List<NewsLetter> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(NewsLetter t)
+        {
+            _newsLetter.Insert(t);
+        }
+
+        public void TDelete(NewsLetter t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(NewsLetter t)
+        {
+            throw new NotImplementedException();
         }
     }
 }
