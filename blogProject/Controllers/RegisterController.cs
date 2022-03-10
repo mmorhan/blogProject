@@ -29,7 +29,7 @@ namespace blogProject.Controllers
             if (validationResult.IsValid)
             {
                 cm.TAdd(writer);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index","Login");
             }
             else
             {

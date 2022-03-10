@@ -24,25 +24,20 @@ namespace blogProject.Controllers
         public async Task<IActionResult>Index(Writer p)
         {
             Context c = new Context();
+
             var datavalue=c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
             if (datavalue != null)
             {
-                //Session remove async from action to use
-
-                //HttpContext.Session.SetString("username", p.WriterMail);
-
-                //Identity
 
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name,p.WriterMail)
+                    new Claim(ClaimTypes.Email,p.WriterMail),
                 };
 
-                var userIdentity = new ClaimsIdentity(claims, "x");
+                var userIdentity = new ClaimsIdentity(claims, "UserIdentity");
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
-
-                return RedirectToAction("Index","Writer");
+                return RedirectToAction("Index","Blog");
             }
             return View();
         }

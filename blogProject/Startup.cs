@@ -28,19 +28,20 @@ namespace blogProject
         {
             services.AddSession();
             services.AddRazorPages();
-            services.AddMvc(config=> {
+            services.AddMvc();
+            // services.AddMvc(config=> {
+                
+            //     var policy = new authorizationpolicybuilder()
+            //         .requireauthenticateduser()
+            //         .build();
 
-                var policy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser()
-                    .Build();
-
-                config.Filters.Add(new AuthorizeFilter(policy)); 
-            });
+            //     config.filters.add(new authorizefilter(policy)); 
+            // });
 
             services.AddMvc();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(x=> {
-                    x.LoginPath = "/login/Index";
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,config=> {
+                    config.LoginPath = "/login/Index";
                 });
 
            

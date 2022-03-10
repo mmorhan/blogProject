@@ -1,13 +1,24 @@
-﻿<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
-    <span>Welcome Back!</span>
-    <span class="mx-lg-4 mx-md-2  mx-1">
-        <a href="/Login">
-            <i class="fas fa-lock"></i> Sign In
-        </a>
-    </span>
-    <span>
-        <a href="/Register">
-            <i class="far fa-user"></i> Register
-        </a>
-    </span>
-</div>
+﻿@using System.Security.Claims
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+            <label for="">Welcome Again, @this.User.FindFirst(ClaimTypes.Email).Value 👋 </label>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+            <span class="mx-lg-4 mx-md-2  mx-1">
+                <a href="/Login">
+                    <i class="fas fa-lock"></i> Sign In
+                </a>
+            </span>
+            <span>
+                <a href="/Register">
+                    <i class="far fa-user"></i> Register
+                </a>
+            </span>
+        </div>
+    }
+}

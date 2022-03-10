@@ -18,10 +18,13 @@ namespace blogProject.Controllers
     public class BlogController : Controller
     {
         BlogManager cm = new BlogManager(new EfBlogRepository());
+        WriterManager wm = new WriterManager(new EfWriterRepository());
 
 
         public IActionResult Index()
         {
+
+
             var values = cm.GetListWithCategory();
             return View(values);
         }
@@ -76,7 +79,7 @@ namespace blogProject.Controllers
         {
             Blog blog = cm.GetById(id);
             cm.TDelete(blog);
-            return RedirectToAction("BlogListByWriter","Blog");
+            return RedirectToAction("BlogListByWriter", "Blog");
 
         }
     }

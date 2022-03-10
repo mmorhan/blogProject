@@ -2,7 +2,7 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class BlogIDchanged : Migration
+    public partial class BlIdChangedAgain : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

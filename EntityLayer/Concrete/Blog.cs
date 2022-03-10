@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
 {
     public class Blog
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BlogId { get; set; }
         public string BlogTitle { get; set; }
         public string BlogContent { get; set; }
@@ -20,9 +20,9 @@ namespace EntityLayer.Concrete
         public string BlogStatus { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int? WriterId{ get; set; }
-        public Writer? Writer{ get; set; }
+        public int? WriterId { get; set; }
+        public Writer? Writer { get; set; }
 
-        public List<Comment> Comments{ get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
